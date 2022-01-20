@@ -1,0 +1,29 @@
+<h2>Admin</h2>
+
+{{ korisnik.ime }}  
+{{ korisnik.prezime }}
+<br/>
+{{ korisnik.mejl }}
+<br/>
+
+<h4>Proizvodi</h4>
+
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Kolicina</th>
+    </tr>
+    <tr *ngFor="let  p of proizvodi" [ngClass]="p.kolicina < 5 ? 'red' : ''">
+        <td>{{p.naziv}}</td>
+        <td>{{p.kolicina}}</td>
+        <td>
+            <button (click)="dodajProizvod(p.naziv)">+</button>
+        </td>
+        <td>
+            <button (click)="skloniProizvod(p.naziv)">-</button>
+        </td>
+    </tr>
+</table>
+{{poruka}}
+
+<hr/>

@@ -1,0 +1,30 @@
+<h2>Login</h2>
+<table>
+    <tr>
+        <td>Username: </td>
+        <td>
+            <input type="text" name="kor_ime" [(ngModel)]='kor_ime'>
+        </td>
+    </tr>
+    <tr>
+        <td>Password: </td>
+        <td>
+            <input type="password" name="lozinka" [(ngModel)]='lozinka'>
+        </td>
+    </tr>
+    <tr>
+        <td>Tip: </td>
+        <td>
+            <select [(ngModel)]="tip">
+                <option value="kupac">Kupac</option>
+                <option value="radnik">Radnik</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="login()">Login</button>
+        </td>
+    </tr>
+</table>
+<span class="message">{{ message }}</span>

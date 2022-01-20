@@ -1,0 +1,34 @@
+<h2>Korisnik</h2>
+
+<h4>Proizvodi</h4>
+
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Kolicina</th>
+    </tr>
+    <tr *ngFor="let  p of proizvodi">
+        <td>{{p.naziv}}</td>
+        <td>{{p.kolicina}}</td>
+        <td>
+            <input type='checkbox' name="proizvodi" [(ngModel)]="p.zaKupovinu">
+        </td>
+    </tr>
+</table>
+<input type='button' value='Kupi' (click)="kupiProizvode()">
+{{poruka}}
+
+<hr/>
+
+<form>
+    Kupljeni proizvod:
+    <select name="kupljenProizvod" [(ngModel)]="kupljenProizvod">
+        <option *ngFor="let kp of korisnik.proizvodi">
+            {{ kp.naziv }}
+        </option>
+    </select>
+    <br/>
+    Komentar: <input type='text' name="komentar" [(ngModel)]="komentar">
+    <br/>
+    <input type='button' value="Komentarisi" (click)="komentarisi()">
+</form>

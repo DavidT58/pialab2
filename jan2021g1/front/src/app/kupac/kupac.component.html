@@ -1,0 +1,23 @@
+<button (click)="logout()">Logout</button>
+
+<hr/>
+
+<h2>Izbor glavnog proizvoda</h2>
+
+<table>
+    <tr>
+        <td>Glavni proizvod: </td>
+        <td>
+            <select [(ngModel)]="glavni">
+                <option *ngFor="let p of proizvodi" value="{{p.naziv}}">{{p.naziv}}</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <!-- <button (click)="izaberi()">Izaberi</button> -->
+            <a [routerLink]="['dodaj']">Izaberi</a>
+        </td>
+    </tr>
+</table>
